@@ -1,27 +1,39 @@
-import React from 'react';
-import Dropdown from './components/Dropdown'
+import React, { useState } from 'react';
+import Dropdown from './components/Dropdown';
 
-
-const options=[
-    {
-        label:'Color red',
-        value:'red'
-    },
-    {
-        label:'Color green',
-        value:'green'
-    },
-    {
-        label:'Color blue',
-        value:'blue'
-    }
+const options = [
+  {
+    label: 'The Color Red',
+    value: 'red',
+  },
+  {
+    label: 'The Color Green',
+    value: 'green',
+  },
+  {
+    label: 'A Shade of Blue',
+    value: 'blue',
+  },
 ];
 
-export default()=>{
+const App= () => {
+  const [selected, setSelected] = useState(options[0]);
+  const [showDropdown, setShowDropdown] = useState(true);
 
-    return (
-            <div>
-                <Dropdown options={options}/>
-            </div>
-        );
+  return (
+    <div>
+      <button onClick={() => setShowDropdown(!showDropdown)}>
+        Toggle Dropdown
+      </button>
+      {showDropdown ? (
+        <Dropdown
+          selected={selected}
+          onSelectedChange={setSelected}
+          options={options}
+        />
+      ) : null}
+    </div>
+  );
 };
+
+export default App;

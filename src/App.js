@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Accordion from './components/Accordion';
-//import Search from './components/Search';
+import SearchBar from './components/SearchBar';
 import Dropdown from './components/Dropdown';
 
 const items=[
@@ -51,7 +51,9 @@ export default () => {
         />
       ) : null}
       <Accordion items={items}/> 
+      <br/>
+      <br/>
+      <SearchBar />
     </div>
   );
 };
-

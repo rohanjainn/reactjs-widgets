@@ -24,6 +24,8 @@ const Translate=()=>{
 
     return(
         <div>
+            <h2 style={{fontSize:'25px',color:'darkcyan'}}>Language Translator</h2>
+            <hr/>
             <div className="ui form">
                 <div className="field">
                     <label style={{fontSize:'20px'}}>Enter text</label>

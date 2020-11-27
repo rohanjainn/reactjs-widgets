@@ -72,7 +72,7 @@ const SearchBar=(props)=>{
     return(
         <div >
             <div className="ui form" >
-                <div className="field">
+                <div className="field" style={{fontWeight:'bolder',color:'chocolate'}}>
                     Search Wiki<input type="text" value={term} onChange={(e) => setTerm(e.target.value)}/>
                 </div>
                 <div className="ui celled list">

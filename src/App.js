@@ -3,6 +3,8 @@ import Accordion from './components/Accordion';
 import SearchBar from './components/SearchBar';
 import Dropdown from './components/Dropdown';
 import Translate from './components/Translate';
+import Route from './components/Route';
+import Header from './components/Header';
 
 const items=[
 {
@@ -40,6 +42,7 @@ const App =() => {
   const [showDropdown, setShowDropdown] = useState(true);
 
   return (
+    /*
     <div>
       <button onClick={() => setShowDropdown(!showDropdown)}>
         Toggle Dropdown
@@ -60,6 +63,30 @@ const App =() => {
       <br/>
       <h2 style={{fontSize:'25px',color:'rebeccapurple'}}>Language Translator</h2>
       <Translate />
+    </div>*/
+
+    <div>
+        <Header />
+        <Route path="/">
+          <Accordion items={items}/> 
+        </Route>
+
+        <Route path="/wiki">
+          <SearchBar />
+        </Route>
+
+        <Route path="/dropdown">
+          <Dropdown 
+          selected={selected}
+          onSelectedChange={setSelected}
+          options={options}
+          labelName='Select color'
+          />
+        </Route>
+
+        <Route path="/translate">
+          <Translate />
+        </Route>
     </div>
   );
 };
